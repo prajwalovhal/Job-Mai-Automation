@@ -1,0 +1,16 @@
+services:
+  job-email-automation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: job-email-automation
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      ATTACHMENT_PATH: /app/files/resume.pdf
+      LOG_DIR: /app/files/logs
+    volumes:
+      - ./files:/app/files
+    restart: unless-stopped

@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: job-email-automation
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: victor@victor.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+
+app:
+  email:
+    subject: "Application for Java Backend Developer - 5.6+ Years Experience"
+    body: |
+      Hi,
+
+      I am a Java Developer with 5.6+ years of experience in Java,
+      Spring Boot, Microservices and REST APIs.
+
+      I am currently looking for new opportunities.
+      Please find my resume attached.
+
+      Regards,
+      Prajwal
+    attachment-path: "${ATTACHMENT_PATH:/app/files/resume.pdf}"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  config: classpath:logback-spring.xml
+
+server:
+  port: 8080

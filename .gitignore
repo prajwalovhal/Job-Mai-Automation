@@ -1,0 +1,13 @@
+target/
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+.env
+
+files/resume.pdf
+files/*.xlsx
+files/logs/*.log
